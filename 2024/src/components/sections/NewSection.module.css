@@ -1,0 +1,197 @@
+.newSection {
+    background-color: #000000;
+    color: white;
+    padding: 100px 0;
+  }
+  
+  .projectsContainer {
+    max-width: 1780px;
+    margin: 0 auto;
+  }
+  
+  .projectBlock {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 120px;
+    padding: 0 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity, transform;
+  }
+  
+  .textContent {
+    padding-top: 60px;
+    width: 850px;
+    flex: 0 0 850px;
+    padding-right: 40px;
+    text-align: left;
+  }
+  
+  .category {
+    display: inline-block;
+    padding: 8px 12px;
+    border: 1px solid white;
+    border-radius: 18px;
+    margin-bottom: 32px;
+    font-size: 16px;
+    font-weight: 300;
+    font-family: 'Paperlogy 4';
+  }
+  
+  .title {
+    font-size: 40px;
+    font-weight: 500;
+    font-family: 'Paperlogy 6';
+    margin-bottom: 40px;
+    word-break: keep-all;
+  }
+  
+  .projectLink {
+    font-weight: 400;
+    font-family: 'Paperlogy 4';
+    color: #01DAA2;
+    text-decoration: none;
+    font-size: 24px;
+  }
+  
+  .imageContent {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .projectImage {
+    width: 720px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .fadeIn {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .slideUp {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .visible .slideUp {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .projectBlock.visible .category {
+    transition-delay: 0.05s;
+  }
+  
+  .projectBlock.visible .title {
+    transition-delay: 0.1s;
+  }
+  
+  .projectBlock.visible .projectLink {
+    transition-delay: 0.15s;
+  }
+  
+  .projectBlock.visible .imageContent {
+    transition-delay: 0.2s;
+  }
+  
+  .visible .imageContent {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .highlight {
+    color: #01DAA2;
+  }
+  
+  @media (max-width: 1920px) {
+    .projectsContainer {
+      max-width: 90%;
+    }
+    
+    .textContent {
+      width: 40%;
+      flex: 0 0 40%;
+    }
+    
+    .projectImage {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  @media (max-width: 1440px) {
+    .title {
+      font-size: 32px;
+    }
+    
+    .projectLink {
+      font-size: 20px;
+    }
+    
+    .category {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .projectBlock {
+      flex-direction: column;
+      margin-bottom: 80px;
+    }
+    
+    .textContent {
+      width: 100%;
+      flex: 1;
+      padding-right: 0;
+      padding-top: 30px;
+      margin-bottom: 30px;
+    }
+    
+    .imageContent {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .title {
+      font-size: 28px;
+    }
+    
+    .projectLink {
+      font-size: 18px;
+    }
+    
+    .newSection {
+      padding: 60px 0;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .title {
+      font-size: 24px;
+    }
+    
+    .category {
+      font-size: 12px;
+      padding: 6px 10px;
+    }
+    
+    .projectBlock {
+      margin-bottom: 60px;
+    }
+  }

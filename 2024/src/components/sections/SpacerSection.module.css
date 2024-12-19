@@ -1,0 +1,279 @@
+.spacerSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background-color: #000000;
+  padding: 40px 0;
+  overflow: hidden;
+}
+
+.greenBox, .borderBox {
+  width: 100%;
+  height: 170px;
+  position: relative;
+  overflow: hidden;
+}
+
+.greenBox {
+  z-index: 1;
+  background-color: #01DAA2;
+  transform: rotate(-2deg);
+  margin: 10px 0;
+}
+
+.borderBox {
+    
+  background-color: #000000;
+  border-top: 3px solid #01DAA2;
+  border-bottom: 3px solid #01DAA2;
+  transform: rotate(2deg);
+  margin: 10px 0;
+}
+
+.marqueeWrapper {
+  display: flex;
+  position: absolute;
+  width: fit-content;
+  height: 100%;
+}
+
+.marquee {
+  display: flex;
+  animation: scroll 30s linear infinite;
+  white-space: nowrap;
+}
+
+.scrollImage {
+    margin-left: 50px;
+  height: 100%;
+  display: block;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marqueeWrapper .marquee:nth-child(2) {
+  animation: scroll2 30s linear infinite;
+  animation-delay: -15s;
+}
+
+@keyframes scroll2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .spacerSection {
+    padding: 20px 0;
+    gap: 20px;
+  }
+
+  .greenBox, .borderBox {
+    height: 120px;
+  }
+}
+
+/* greenBox용 왼쪽으로 흐르는 애니메이션 */
+.greenBox .marquee {
+  animation: scrollLeft 60s linear infinite;
+  white-space: nowrap;
+}
+
+.greenBox .marqueeWrapper .marquee:nth-child(2) {
+  animation: scrollLeft2 60s linear infinite;
+  animation-delay: -20s;
+}
+
+/* borderBox용 오른쪽으로 흐르는 애니메이션 */
+.borderBox .marquee {
+  animation: scrollRight 60s linear infinite;
+  white-space: nowrap;
+}
+
+.borderBox .marqueeWrapper .marquee:nth-child(2) {
+  animation: scrollRight2 60s linear infinite;
+  animation-delay: -20s;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollLeft2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes scrollRight2 {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* 데스크탑 큰 화면 (1920px 이상) */
+@media (min-width: 1921px) {
+  .greenBox, .borderBox {
+    height: 200px;
+  }
+  
+  .scrollImage {
+    height: 200px;
+  }
+}
+
+/* 일반 데스크탑 (1440px - 1920px) */
+@media (max-width: 1920px) {
+  .spacerSection {
+    padding: 35px 0;
+  }
+  
+  .greenBox, .borderBox {
+    height: 160px;
+  }
+  
+  .scrollImage {
+    height: 160px;
+    margin-left: 40px;
+  }
+}
+
+/* 작은 데스크탑 (1024px - 1439px) */
+@media (max-width: 1440px) {
+  .spacerSection {
+    padding: 30px 0;
+    gap: 35px;
+  }
+  
+  .greenBox, .borderBox {
+    height: 140px;
+  }
+  
+  .scrollImage {
+    height: 140px;
+    margin-left: 35px;
+  }
+}
+
+/* 태블릿 (768px - 1023px) */
+@media (max-width: 1024px) {
+  .spacerSection {
+    padding: 25px 0;
+    gap: 30px;
+  }
+  
+  .greenBox, .borderBox {
+    height: 120px;
+  }
+  
+  .scrollImage {
+    height: 120px;
+    margin-left: 30px;
+  }
+  
+  .greenBox {
+    transform: rotate(-1.5deg);
+  }
+  
+  .borderBox {
+    transform: rotate(1.5deg);
+  }
+}
+
+/* 큰 모바일 (480px - 767px) */
+@media (max-width: 768px) {
+  .spacerSection {
+    padding: 20px 0;
+    gap: 25px;
+  }
+  
+  .greenBox, .borderBox {
+    height: 100px;
+  }
+  
+  .scrollImage {
+    height: 100px;
+    margin-left: 25px;
+  }
+  
+  .greenBox {
+    transform: rotate(-1deg);
+  }
+  
+  .borderBox {
+    transform: rotate(1deg);
+  }
+}
+
+/* 작은 모바일 (480px 이하) */
+@media (max-width: 480px) {
+  .spacerSection {
+    padding: 15px 0;
+    gap: 20px;
+  }
+  
+  .greenBox, .borderBox {
+    height: 80px;
+  }
+  
+  .scrollImage {
+    height: 80px;
+    margin-left: 20px;
+  }
+  
+  /* 애니메이션 속도 조정 */
+  .greenBox .marquee,
+  .greenBox .marqueeWrapper .marquee:nth-child(2),
+  .borderBox .marquee,
+  .borderBox .marqueeWrapper .marquee:nth-child(2) {
+    animation-duration: 40s; /* 모바일에서는 더 빠르게 */
+  }
+}
+
+/* 가로 모드 대응 */
+@media (max-height: 600px) {
+  .spacerSection {
+    padding: 15px 0;
+    gap: 20px;
+  }
+  
+  .greenBox, .borderBox {
+    height: 90px;
+  }
+  
+  .scrollImage {
+    height: 90px;
+  }
+} 

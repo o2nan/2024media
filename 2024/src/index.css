@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'PressioTEST';
+  src: url('./assets/fonts/PressioTEST-No.35.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Paperlogy 6';
+  src: url('./assets/fonts/Paperlogy-6SemiBold\ \(1\).woff') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Paperlogy 4';
+  src: url('./assets/fonts/Paperlogy-4Regular\ \(1\).woff') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('./assets/fonts/Pretendard-Regular.woff') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  margin: 0;
+  font-family:  'Paperlogy 6', 'Paperlogy 4';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
